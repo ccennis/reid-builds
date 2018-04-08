@@ -24,15 +24,9 @@
                     <img src="/reidbuildslogo-01.png">
                 </a>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <!--<li th:classappend="${#httpServletRequest.servletPath.equals('/categories') ? 'active' : ''}"><a th:href="@{/categories}">Our Work</a></li>-->
-                <!--<li th:classappend="${#httpServletRequest.servletPath.equals('#about') ? 'active' : ''}"><a th:href="@{/#about(action='show')}">About Us</a></li>-->
-                <!--<li th:classappend="${#httpServletRequest.servletPath.equals('#contact') ? 'active' : ''}"><a th:href="@{/#contact(action='show')}">Contact</a></li>-->
-
-
-            </ul>
-            <ul id="mobile-nav" class="side-nav">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/about') ? 'active' : ''}"><a th:href="@{/upload}">About Us</a></li>
+            <ul class="right hide-on-med-and-down" style="padding:10px">
+                <li th:style="${#httpServletRequest.requestURI.equals('/') ? 'display:none' : ''}"><a th:href="@{/}"><i class="material-icons left">arrow_back</i>Home</a></li>
+                <li th:style="${#httpServletRequest.requestURI.equals('/') ? 'display:none' : ''}"><a th:href="@{/#contact}"><i class="material-icons left">email</i>Contact</a></li>
             </ul>
         </div>
         </div>
@@ -47,8 +41,6 @@
 <div th:fragment="scripts">
     <script th:src="@{/vendor/jquery/jquery-3.3.1.js}"></script>
     <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
-    <!--<script th:src="@{/vendor/codrops/js/classie.js}"></script>-->
-    <!--<script th:src="@{/vendor/codrops/js/selectFx.js}"></script>-->
     <script th:src="@{/app.js}"></script>
 
 </div>

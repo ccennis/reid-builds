@@ -1,8 +1,5 @@
 package com.hh.reidbuilds.exception;
 
-/**
- * Created by cennis on 3/25/18.
- */
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

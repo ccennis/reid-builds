@@ -4,6 +4,6 @@ $(function(){
 
 });
 
-$('#custom').click(function(){
-    alert("clicked!");
-});
+// $('#custom').click(function(){
+//     alert("clicked!");
+// });

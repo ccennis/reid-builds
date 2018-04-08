@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('categories')"></head>
+<body>
+<div th:replace="layout :: nav"></div>
+<div th:replace="layout :: flash"></div>
+
+<div class="container" style="padding-top: 70px">
+    <div class="row">
+        <div class="col s4">
+            <div class="card">
+                <div class="card-content card-category">
+                    <div class="card-title">
+                        <a class="name" id="all" href="/categories/all">all work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card">
+                <div class="card-content card-category">
+                    <div class="card-title">
+                        <a class="name" id="custom" href="/categories/custom">custom</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card">
+                <div class="card-content card-category">
+                    <div class="card-title">
+                        <a class="name" id="built-ins" href="/categories/built-ins">built-ins</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div th:each="image : ${images}" class="col s3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" th:src="@{${image.path}} + '?fit=crop&w=300&h=350'"/>
+                </div>
+                <div class="card-content" style="text-align: center">
+                    <a th:href="@{${image.path}}"><span th:text="${image.name}">name</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
