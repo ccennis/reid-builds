@@ -14,4 +14,7 @@ import java.util.List;
 
     List<Image> findByCategoryId(Long id);
 
+    List<Image> findByCategorySlug(String slug);
+
+
 }

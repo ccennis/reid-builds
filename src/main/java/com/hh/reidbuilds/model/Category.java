@@ -24,6 +24,9 @@ public class Category {
     @NotBlank
     private String name;
 
+    @NotBlank
+    private String slug;
+
     @Column(nullable = true, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
@@ -78,5 +81,13 @@ public class Category {
 
     public void setImages(List<Image> images) {
         this.images = images;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 }

@@ -7,6 +7,7 @@ import com.hh.reidbuilds.repository.CategoryRepository;
 import com.hh.reidbuilds.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,13 +15,11 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/api")
 public class CategoryController {
 
     @Autowired
     CategoryRepository categoryRepository;
-
-    @Autowired
-    ImageRepository imageRepository;
 
     @GetMapping("/categories")
     public List<Category> getAllCategories() {
@@ -31,14 +30,6 @@ public class CategoryController {
     public Category createCategory(@Valid @RequestBody Category category) {
         return categoryRepository.save(category);
     }
-//
-//    @GetMapping("/categoryImages/{id}")
-//    public List<Image> getCategoryImages(@PathVariable(value = "id") Long categoryId) {
-//        Category category = categoryRepository.findById(categoryId)
-//                .orElseThrow(() -> new ResourceNotFoundException("Category", "id", categoryId));
-//
-//        return category.getImages();
-//    }
 
     @GetMapping("/categories/{id}")
     public Category getCategoryById(@PathVariable(value = "id") Long categoryId) {
@@ -48,7 +39,7 @@ public class CategoryController {
 
     @PutMapping("/categories/{id}")
     public Category updateCategory(@PathVariable(value = "id") Long categoryId,
-                           @Valid @RequestBody Category categoryDetails) {
+                                   @Valid @RequestBody Category categoryDetails) {
 
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(() -> new ResourceNotFoundException("Category", "id", categoryId));

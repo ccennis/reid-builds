@@ -19,10 +19,12 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     @NotBlank
     private String path;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="category_id")
     @JsonBackReference
     private Category category;
@@ -35,7 +37,6 @@ public class Image {
         this.id = id;
     }
 
-    @JsonIgnoreProperties
     public Category getCategory() {
         return category;
     }
@@ -50,5 +51,13 @@ public class Image {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
