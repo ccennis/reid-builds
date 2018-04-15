@@ -47,7 +47,7 @@ nav ul li a {
 }
 
 nav ul li a, nav .brand-logo span {
-    color: #d9bdac;
+    color: #fefefe;
 }
 
 nav ul li.active, nav ul li:hover {
@@ -113,7 +113,7 @@ nav ul li.active, nav ul li:hover {
     padding-left: 0;
 }
 
-.gifs.container .col:nth-child(3n+3) {
+.cards.container .col:nth-child(3n+3) {
     padding-right: 0;
 }
 
@@ -215,6 +215,11 @@ nav ul li.active, nav ul li:hover {
 .card .card-category {
     box-shadow: none;
     background-color: #000080;
+}
+
+.card .card-selected {
+    box-shadow: none;
+    background-color: #73BEF3;
 }
 
 .card .card-title {

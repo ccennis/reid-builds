@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('details')"></head>
+
+<head><body>
+<div th:replace="layout :: nav"></div>
+<!--<div th:replace="layout :: searchbar"></div>-->
+<div th:replace="layout :: flash"></div>
+
+<!--start container-->
+<div class="container">
+    <div class="section">
+
+        <p class="caption">Thank you!</p>
+
+        <div class="divider"></div>
+        <div id="contact" class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12 l8">
+                        <p> Thanks for getting in touch, we will contact you as soon as possible!</p>
+                        <a href="/" class="indigo darken-4 waves-effect waves-light btn"><i class="material-icons left">arrow_back</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
